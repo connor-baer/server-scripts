@@ -1,0 +1,46 @@
+# Server Scripts Environment
+#
+# Local environmental config for Connor Bär Server scripts
+#
+# @author    Connor Bär
+# @copyright Copyright (c) 2017 Connor Bär
+# @link      https://madebyconnor.co/
+# @package   server-scripts
+# @since     1.0.0
+# @license   MIT
+#
+# This file should be renamed to '.env.sh'
+# `scripts` directory.  Add '.env.sh' to your .gitignore.
+
+# -- LOCAL settings --
+
+# Local path constants; paths should always have a trailing /
+LOCAL_ROOT_PATH="REPLACE_ME"
+
+# Local user & group that should own the Server install
+LOCAL_CHOWN_USER="admin"
+LOCAL_CHOWN_GROUP="apache"
+
+# Local backups path; paths should always have a trailing /
+LOCAL_BACKUPS_PATH="REPLACE_ME"
+
+# -- REMOTE settings --
+
+# Remote ssh credentials, user@domain.com and Remote SSH Port
+REMOTE_SSH_LOGIN="REPLACE_ME"
+REMOTE_SSH_PORT="22"
+
+# Remote path constants; paths should always have a trailing /
+REMOTE_ROOT_PATH="REPLACE_ME"
+
+# Remote backups path; paths should always have a trailing /
+REMOTE_BACKUPS_PATH="REPLACE_ME"
+
+# Remote Amazon S3 bucket name
+REMOTE_S3_BUCKET="REPLACE_ME"
+
+# Remote Dropbox path; paths should always have a trailing /
+REMOTE_DROPBOX_PATH="REPLACE_ME"
+
+# Remote Slack incoming webhook url
+REMOTE_SLACK_HOOK="REPLACE_ME"
