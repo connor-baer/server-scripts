@@ -1,5 +1,5 @@
 # server-scripts
-Shell scripts to install Server, manage database backups, asset backups, asset syncing, and database syncing between Server environments
+Shell scripts to manage and maintain Ubuntu servers
 
 ## Overview
 
@@ -27,11 +27,10 @@ You can pass in either a path to a `.sql` file or ` .gz` file to `restore_db.sh`
 
 ### Setting it up
 
-1. Download or clone the `server-scripts` git repo
-2. Copy the `scripts` directory into the root directory of your Server project
-3. Duplicate the `example.env.sh` file, and rename it to `.env.sh`
-4. Add `.env.sh` to your `.gitignore` file
-5. Then open up the `.env.sh` file into your favorite editor, and replace `REPLACE_ME` with the appropriate settings.
+1. Download or clone the `server-scripts` git repo to your server.
+2. Duplicate the `example.env.sh` file, and rename it to `.env.sh`.
+3. Then open up the `.env.sh` file into your favorite editor, and replace `REPLACE_ME` with the appropriate settings.
+4. Optionally set up [automatic script execution](#automatic-script-execution).
 
 All configuration is done in the `.env.sh` file, rather than in the scripts themselves. This is is so that the same scripts can be used in multiple environments such as `local` dev, `staging`, and `live` production without modification. Just create a `.env.sh` file in each environment, and keep it out of your git repo via `.gitignore`.
 
@@ -85,12 +84,12 @@ See the [git-config man page](https://git-scm.com/docs/git-config#git-config-cor
 
 ### Automatic Script Execution
 
-If you want to run any of these scripts automatically at a set schedule, here's how to do it. We'll use the `backup_db.sh` script as an example, but the same applies to any of the scripts.
+If you want to run any of these scripts automatically at a set schedule, here's how to do it. We'll use the `backup_dropbox.sh` script as an example, but the same applies to any of the scripts.
 
 Please see the **Setting up SSH Keys** section and set up your SSH keys before you set up automatic script execution.
 
 #### On Linux
 
-If you're using [Forge](https://forge.laravel.com/) you can set the `backup_db.sh` script to run nightly (or whatever interval you want) via the Scheduler. If you're using [ServerPilot.io](https://serverpilot.io/community/articles/how-to-use-cron-to-schedule-scripts.html) or are managing the server yourself, just set the `backup_db.sh` script to run via `cron` at whatever interval you desire.
+If you're using [Forge](https://forge.laravel.com/) you can set the `backup_dropbox.sh` script to run nightly (or whatever interval you want) via the Scheduler. If you're using [ServerPilot.io](https://serverpilot.io/community/articles/how-to-use-cron-to-schedule-scripts.html) or are managing the server yourself, just set the `backup_dropbox.sh` script to run via `cron` at whatever interval you desire.
 
 🐼 [Made by Connor](https://madebyconnor.co/)
