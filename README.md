@@ -3,7 +3,7 @@ Shell scripts to manage and maintain Ubuntu servers
 
 ## Overview
 
-There are several scripts included in `server-scripts`, each of which perform different functions. They all use a shared `.env.sh` to function. This `.env.sh` should be created on each environment where you wish to run the `server-scripts`, and it should be excluded from your git repo via `.gitignore`.
+There are several scripts included in `server-scripts`, each of which perform different functions. They all use a shared `.env.sh` to function. This `.env` should be created on each environment where you wish to run the `server-scripts`, and it should be excluded from your git repo via `.gitignore`.
 
 ### backup_s3.sh
 
@@ -28,11 +28,11 @@ You can pass in either a path to a `.sql` file or ` .gz` file to `restore_db.sh`
 ### Setting it up
 
 1. Download or clone the `server-scripts` git repo to your server.
-2. Duplicate the `example.env.sh` file, and rename it to `.env.sh`.
-3. Then open up the `.env.sh` file into your favorite editor, and replace `REPLACE_ME` with the appropriate settings.
+2. Duplicate the `example.env` file, and rename it to `.env`.
+3. Then open up the `.env` file into your favorite editor, and replace `REPLACE_ME` with the appropriate settings.
 4. Optionally set up [automatic script execution](#automatic-script-execution).
 
-All configuration is done in the `.env.sh` file, rather than in the scripts themselves. This is is so that the same scripts can be used in multiple environments such as `local` dev, `staging`, and `live` production without modification. Just create a `.env.sh` file in each environment, and keep it out of your git repo via `.gitignore`.
+All configuration is done in the `.env` file, rather than in the scripts themselves. This is is so that the same scripts can be used in multiple environments such as `local` dev, `staging`, and `live` production without modification. Just create a `.env` file in each environment, and keep it out of your git repo via `.gitignore`.
 
 #### Local Settings
 
