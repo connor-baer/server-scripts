@@ -15,9 +15,9 @@
 DIR="$(dirname "${BASH_SOURCE[0]}")"
 
 # Include file
-if [ -f ".env" ]
+if [ -f "${DIR}/.env" ]
 then
-    source ".env"
+    source "${DIR}/.env"
 else
     echo "File .env is missing, aborting."
     exit 1
