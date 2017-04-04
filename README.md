@@ -5,7 +5,7 @@ Shell scripts to manage and maintain Ubuntu servers
 
 There are several scripts included in `server-scripts`, each of which perform different functions. They all use a shared `.env.sh` to function. This `.env` should be created on each environment where you wish to run the `server-scripts`, and it should be excluded from your git repo via `.gitignore`.
 
-### backup_s3.sh
+### `backup_s3.sh`
 
 The `backup_s3.sh` script syncs the backups from `LOCAL_BACKUPS_PATH` to the Amazon S3 bucket specified in `REMOTE_S3_BUCKET`.
 
@@ -13,13 +13,13 @@ This script assumes that you have already [installed awscli](http://docs.aws.ama
 
 It's recommended that you set up a separate user with access to only S3, and set up a private S3 bucket for your backups.
 
-### backup_dropbox.sh
+### `backup_dropbox.sh`
 
 The `backup_dropbox.sh` script uploads a compressed archive of the backups from `LOCAL_BACKUPS_PATH` to the Dropbox folder specified in `REMOTE_DROPBOX_PATH`.
 
 This script assumes that you have already [installed dbxcli](https://github.com/dropbox/dbxcli#installation) and have configured it with your credentials.
 
-### notify_slack.sh
+### `notify_slack.sh`
 
 The `restore_db.sh` restores the local database to the database dumb passed in via command line argument. It backs up your local database before doing the restore.
 
@@ -38,9 +38,9 @@ All configuration is done in the `.env` file, rather than in the scripts themsel
 
 All settings that are prefaced with `LOCAL_` refer to the local environment where the script will be run, **not** your `local` dev environment.
 
-`LOCAL_ROOT_PATH` is the absolute path to the root of your local Server install, with a trailing `/` after it.
+`LOCAL_ROOT_PATH` is the absolute path to the root of your local server install, with a trailing `/` after it.
 
-`LOCAL_CHOWN_USER` is the user that is the owner of your entire Server install.
+`LOCAL_CHOWN_USER` is the user that is the owner of your entire server install.
 
 `LOCAL_CHOWN_GROUP` is your webserver's group, usually either `nginx` or `apache`.
 
@@ -54,7 +54,7 @@ All settings that are prefaced with `REMOTE_` refer to the remote environment wh
 
 `REMOTE_SSH_PORT` is the port to use for ssh on the remote server. This is normally `22`
 
-`REMOTE_ROOT_PATH` is the absolute path to the root of your Server install on the remote server, with a trailing `/` after it.
+`REMOTE_ROOT_PATH` is the absolute path to the root of your server install on the remote server, with a trailing `/` after it.
 
 `REMOTE_BACKUPS_PATH` is the absolute path to the directory where the remote backups are stored. For database backups, a sub-directory `REMOTE_DB_NAME/db` inside the `REMOTE_BACKUPS_PATH` directory is used for the database backups. Paths should always have a trailing `/`
 
@@ -72,7 +72,7 @@ The day in, day out benefit of setting up SSH Keys is that you never have to ent
 
 ### Permissions and Git
 
-If you use `git`, a sample `.gitignore` file that you can modify & use for your Server projects is included in `server-scripts` as `example.gitignore`. If you wish to use it, the file should be copied to your Server project root, and renamed `.gitignore`
+If you use `git`, a sample `.gitignore` file that you can modify & use for your server projects is included in `server-scripts` as `example.gitignore`. If you wish to use it, the file should be copied to your server project root, and renamed `.gitignore`
 
 If you change file permissions on your remote server, you may encounter git complaining about `overwriting existing local changes` when you try to deploy. This is because git considers changing the executable flag to be a change in the file, so it thinks you changed the files on your server (and the changes are not checked into your git repo).
 
