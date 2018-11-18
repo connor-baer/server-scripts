@@ -19,12 +19,6 @@ The `backup_dropbox.sh` script uploads a compressed archive of the backups from 
 
 This script assumes that you have already [installed dbxcli](https://github.com/dropbox/dbxcli#installation) and have configured it with your credentials.
 
-### `notify_slack.sh`
-
-The `restore_db.sh` restores the local database to the database dumb passed in via command line argument. It backs up your local database before doing the restore.
-
-You can pass in either a path to a `.sql` file or ` .gz` file to `restore_db.sh`, and it will do the right thing based on the file type.
-
 ### Setting it up
 
 1. Download or clone the `server-scripts` git repo to your server.
@@ -63,6 +57,10 @@ All settings that are prefaced with `REMOTE_` refer to the remote environment wh
 `REMOTE_DROPBOX_PATH` is the path of the Dropbox folder to backup to via the `backup_dropbox.sh` script
 
 `REMOTE_SLACK_HOOK` is the incoming webhook url to post notifications to Slack via the `notify_slack.sh` script
+
+`REMOTE_TELEGRAM_HOOK` is the incoming webhook url to post notifications to Telegram via the `notify_telegram.sh` script
+
+`REMOTE_TELEGRAM_CHAT_ID` is the chat id to post notifications to Telegram via the `notify_telegram.sh` script
 
 ### Setting up SSH Keys
 
